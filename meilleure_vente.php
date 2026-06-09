@@ -27,23 +27,25 @@
                 <button class="filter-btn">7 derniers jours</button>
             </div>
             <div class="category-filter">
-                <label for="category-select">Filtrer par catégorie:</label>
-                <select id="category-select">
-                    <option value="">Toutes les catégories</option>
-                    <option value="chaussures-homme">Chaussures homme</option>
-                    <option value="maison">Maison et Cuisine</option>
-                    <option value="vetements-femme">Vêtements femme</option>
-                    <option value="grandes-tailles-femme">Grandes tailles femme</option>
-                    <option value="chaussures-femme">Chaussures femme</option>
-                    <option value="lingerie">Lingerie et Pyjamas femme</option>
-                    <option value="vetements-homme">Vêtements homme</option>
-                    <option value="grandes-tailles-homme">Grandes tailles homme</option>
-                    <option value="pyjamas">Pyjamas et Sous-vêtemnts</option>
-                    <option value="sports">Sports et Activités d'extérieur</option>
-                    <option value="bijoux">Bijoux et Accessoires</option>
-                    <option value="beaute">Beauté et Santé</option>
-                    <option value="jouets">Jouets et Jeux</option>
-                </select>
+                <label for="category-dropdown">Filtrer par catégorie:</label>
+                <div class="category-dropdown" id="category-dropdown">
+                    <div class="category-selected">Toutes les catégories <span class="mm-arrow">›</span></div>
+                    <div class="category-options">
+                        <div class="mm-sidebar-item" data-category="chaussures-homme">Chaussures homme <span class="mm-arrow">›</span></div>
+                        <div class="mm-sidebar-item" data-category="maison">Maison et Cuisine <span class="mm-arrow">›</span></div>
+                        <div class="mm-sidebar-item" data-category="vetements-femme">Vêtements femme <span class="mm-arrow">›</span></div>
+                        <div class="mm-sidebar-item" data-category="grandes-tailles-femme">Grandes tailles femme <span class="mm-arrow">›</span></div>
+                        <div class="mm-sidebar-item" data-category="chaussures-femme">Chaussures femme <span class="mm-arrow">›</span></div>
+                        <div class="mm-sidebar-item" data-category="lingerie">Lingerie et Pyjamas femme <span class="mm-arrow">›</span></div>
+                        <div class="mm-sidebar-item" data-category="vetements-homme">Vêtements homme <span class="mm-arrow">›</span></div>
+                        <div class="mm-sidebar-item" data-category="grandes-tailles-homme">Grandes tailles homme <span class="mm-arrow">›</span></div>
+                        <div class="mm-sidebar-item" data-category="pyjamas">Pyjamas et Sous-vêtemnts <span class="mm-arrow">›</span></div>
+                        <div class="mm-sidebar-item" data-category="sports">Sports et Activités d'extérieur <span class="mm-arrow">›</span></div>
+                        <div class="mm-sidebar-item" data-category="bijoux">Bijoux et Accessoires <span class="mm-arrow">›</span></div>
+                        <div class="mm-sidebar-item" data-category="beaute">Beauté et Santé <span class="mm-arrow">›</span></div>
+                        <div class="mm-sidebar-item" data-category="jouets">Jouets et Jeux <span class="mm-arrow">›</span></div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

@@ -64,4 +64,57 @@
             if (panel) panel.classList.add('active');
         });
     });
+
+    const btnLogin = document.getElementById('btn-login');
+    const loginPopup = document.getElementById('login-popup');
+    const loginOverlay = document.getElementById('login-overlay');
+    const loginClose = document.getElementById('login-close');
+
+    btnLogin.addEventListener('click', function() {
+        loginPopup.classList.add('open');
+        loginOverlay.classList.add('open');
+        document.body.classList.add('menu-open');
+    });
+
+    loginClose.addEventListener('click', function() {
+        loginPopup.classList.remove('open');
+        loginOverlay.classList.remove('open');
+        document.body.classList.remove('menu-open');
+    });
+
+    loginOverlay.addEventListener('click', function() {
+        loginPopup.classList.remove('open');
+        loginOverlay.classList.remove('open');
+        document.body.classList.remove('menu-open');
+    });
+
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && loginPopup.classList.contains('open')) {
+            loginPopup.classList.remove('open');
+            loginOverlay.classList.remove('open');
+            document.body.classList.remove('menu-open');
+        }
+    });
+
+    const categoryDropdown = document.getElementById('category-dropdown');
+    
+    if (categoryDropdown) {
+        document.querySelector('.category-selected').addEventListener('click', function(e) {
+            e.stopPropagation();
+            categoryDropdown.classList.toggle('open');
+        });
+        
+        document.querySelectorAll('.category-options .mm-sidebar-item').forEach(function(item) {
+            item.addEventListener('click', function() {
+                document.querySelector('.category-selected').innerHTML = this.textContent + ' <span class="mm-arrow">›</span>';
+                categoryDropdown.classList.remove('open');
+            });
+        });
+        
+        document.addEventListener('click', function() {
+            if (categoryDropdown.classList.contains('open')) {
+                categoryDropdown.classList.remove('open');
+            }
+        });
+    }
 </script>

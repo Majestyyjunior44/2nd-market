@@ -22,14 +22,37 @@
                 </form>
                 <div class="icons-wrapper">
                     <div class="cart-icon"><i class="bi bi-cart"></i></div>
-                    <div class="person-icon"><i class="bi bi-person"> Se connecter</i></div>
+<div class="person-icon" id="btn-login" style="cursor: pointer;"><i class="bi bi-person"> Se connecter</i></div>
                 </div>
             </div>
         </div>
-    </div>
-</header>
+    </header>
 
-<div class="mega-menu-overlay" id="mega-overlay"></div>
+    <!-- Login Popup -->
+    <div class="login-overlay" id="login-overlay"></div>
+    <div class="login-popup" id="login-popup">
+        <div class="login-header">
+            <h2>Se connecter</h2>
+            <button class="login-close" id="login-close"><i class="bi bi-x"></i></button>
+        </div>
+        <p class="security-note">Toutes les données sont protégées</p>
+        <form class="login-form" id="login-form">
+            <div class="form-group">
+                <label for="email">E-mail</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Mot de passe</label>
+                <input type="password" id="password" name="password" required>
+                <div class="forgot-password"><a href="#">Mot de passe oublié ?</a></div>
+            </div>
+            <button type="submit" class="btn-login">Se connecter</button>
+            <p class="signup-link">N'avez-vous pas déjà un compte? <a href="#">Inscrivez-vous</a>.</p>
+            <p class="terms-text">En vous connectant, vous acceptez notre <a href="#">Conditions d'utilisation</a> et reconnaissez que vous avez lu notre <a href="#">Politique de confidentialité</a>.</p>
+        </form>
+    </div>
+
+    <div class="mega-menu-overlay" id="mega-overlay"></div>
 
 <div class="mega-menu-wrapper" id="mega-menu">
     <nav class="mm-sidebar">
