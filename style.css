@@ -416,3 +416,107 @@ footer { background-color: #333; color: white; padding: 40px 0 20px; }
 @media (max-width: 480px) {
     .mm-grid { grid-template-columns: repeat(2, 1fr); }
 }
+
+/* Page header with filter buttons */
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 15px;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.page-header .page-title {
+    margin: 0;
+    font-size: 1.5rem;
+    color: #333;
+}
+
+.header-filters {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.filter-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.filter-btn {
+    padding: 8px 16px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background: white;
+    color: #333;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.filter-btn:hover {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+}
+
+.filter-btn.active {
+    background: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+}
+
+.category-filter {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.category-filter label {
+    font-size: 0.9rem;
+    color: #333;
+    white-space: nowrap;
+}
+
+.category-filter select {
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    background: white;
+    cursor: pointer;
+}
+
+.category-filter select:focus {
+    border-color: var(--primary-color);
+    outline: none;
+}
+
+@media (max-width: 768px) {
+    .page-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .header-filters {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+    }
+    
+    .filter-buttons {
+        width: 100%;
+    }
+    
+    .category-filter {
+        width: 100%;
+    }
+    
+    .category-filter select {
+        width: 100%;
+        max-width: 300px;
+    }
+}

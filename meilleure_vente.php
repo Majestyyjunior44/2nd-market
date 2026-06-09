@@ -8,31 +8,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
 </head>
 <body>
-    <header>
-        <div class="header-bg">
-            <div class="container">
-                <div class="logo-wrapper">
-                    <div class="logo-section left"><i class="bi bi-bike"></i> Livraison rapide</div>
-                    <div class="logo-section center"><i class="bi bi-phone"></i> Télécharger notre App</div>
-                    <div class="logo-section right">Vendre sur la plateforme</div>
-                </div>
-            </div>
-            <div class="header-beige">
-                <div class="header-actions">
-                    <div class="nos-ventes">Nos meilleur ventes</div>
-                    <div class="toutes-categories"><i class="bi bi-list"></i> Toutes les catégories</div>
-                    <form class="search-bar">
-                        <input type="text" placeholder="Rechercher des articles...">
-                        <button type="submit"><i class="bi bi-search"></i></button>
-                    </form>
-                    <div class="icons-wrapper">
-                        <div class="cart-icon"><i class="bi bi-cart"></i></div>
-                        <div class="person-icon"><i class="bi bi-person"> Se connecter</i></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
+    <?php include 'everywere/header.php'; ?>
 
     <section class="hero">
         <div class="container">
@@ -41,6 +17,36 @@
             <a href="#" class="btn-primary">Voir toutes les meilleures ventes</a>
         </div>
     </section>
+
+    <div class="page-header">
+        <h2 class="page-title">Nos meilleures ventes</h2>
+        <div class="header-filters">
+            <div class="filter-buttons">
+                <button class="filter-btn active">30 derniers jours</button>
+                <button class="filter-btn">14 derniers jours</button>
+                <button class="filter-btn">7 derniers jours</button>
+            </div>
+            <div class="category-filter">
+                <label for="category-select">Filtrer par catégorie:</label>
+                <select id="category-select">
+                    <option value="">Toutes les catégories</option>
+                    <option value="chaussures-homme">Chaussures homme</option>
+                    <option value="maison">Maison et Cuisine</option>
+                    <option value="vetements-femme">Vêtements femme</option>
+                    <option value="grandes-tailles-femme">Grandes tailles femme</option>
+                    <option value="chaussures-femme">Chaussures femme</option>
+                    <option value="lingerie">Lingerie et Pyjamas femme</option>
+                    <option value="vetements-homme">Vêtements homme</option>
+                    <option value="grandes-tailles-homme">Grandes tailles homme</option>
+                    <option value="pyjamas">Pyjamas et Sous-vêtemnts</option>
+                    <option value="sports">Sports et Activités d'extérieur</option>
+                    <option value="bijoux">Bijoux et Accessoires</option>
+                    <option value="beaute">Beauté et Santé</option>
+                    <option value="jouets">Jouets et Jeux</option>
+                </select>
+            </div>
+        </div>
+    </div>
 
     <section class="featured-products">
         <div class="container">
@@ -210,27 +216,7 @@
         </div>
     </section>
 
-    <nav class="pagination">
-        <div class="container">
-            <ul class="pagination-list">
-                <li><a href="#" class="pagination-link">1</a></li>
-                <li><a href="#" class="pagination-link active">2</a></li>
-                <li><a href="#" class="pagination-link">3</a></li>
-                <li><a href="#" class="pagination-link">4</a></li>
-                <li><a href="#" class="pagination-link next">›</a></li>
-            </ul>
-        </div>
-    </nav>
+<?php include 'everywere/footer.php'; ?>
 
-    <footer>
-        <div class="container">
-            <div class="footer-links">
-                <div><h3>À propos</h3><a href="#">Notre histoire</a><a href="#">Carrières</a></div>
-                <div><h3>Aide</h3><a href="#">Suivi de commande</a><a href="#">Retours</a></div>
-                <div><h3>Suivez-nous</h3><a href="#">Facebook</a><a href="#">Instagram</a><a href="#">TikTok</a></div>
-            </div>
-            <p class="copyright">© 2026 TEMU. Tous droits réservés.</p>
-        </div>
-    </footer>
 </body>
 </html>
