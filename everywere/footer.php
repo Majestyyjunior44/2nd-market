@@ -48,6 +48,20 @@
         megaMenu.classList.contains('open') ? closeMenu() : openMenu();
     });
 
+    btnCategories.addEventListener('mouseenter', function() {
+        megaMenu.classList.add('open');
+        overlay.classList.add('open');
+        btnCategories.classList.add('active');
+        document.body.classList.add('menu-open');
+    });
+
+    megaMenu.addEventListener('mouseleave', function() {
+        megaMenu.classList.remove('open');
+        overlay.classList.remove('open');
+        btnCategories.classList.remove('active');
+        document.body.classList.remove('menu-open');
+    });
+
     overlay.addEventListener('click', closeMenu);
 
     document.addEventListener('keydown', function(e) {
@@ -99,14 +113,24 @@
     const categoryDropdown = document.getElementById('category-dropdown');
     
     if (categoryDropdown) {
-        document.querySelector('.category-selected').addEventListener('click', function(e) {
+        const categorySelected = document.querySelector('.category-selected');
+        
+        categorySelected.addEventListener('click', function(e) {
             e.stopPropagation();
             categoryDropdown.classList.toggle('open');
         });
         
+        categoryDropdown.addEventListener('mouseenter', function() {
+            categoryDropdown.classList.add('open');
+        });
+        
+        categoryDropdown.addEventListener('mouseleave', function() {
+            categoryDropdown.classList.remove('open');
+        });
+        
         document.querySelectorAll('.category-options .mm-sidebar-item').forEach(function(item) {
             item.addEventListener('click', function() {
-                document.querySelector('.category-selected').innerHTML = this.textContent + ' <span class="mm-arrow">›</span>';
+                categorySelected.innerHTML = this.textContent + ' <span class="mm-arrow">›</span>';
                 categoryDropdown.classList.remove('open');
             });
         });
@@ -115,6 +139,61 @@
             if (categoryDropdown.classList.contains('open')) {
                 categoryDropdown.classList.remove('open');
             }
+        });
+    }
+
+    const btnSignup = document.getElementById('btn-signup');
+    const signupPopup = document.getElementById('signup-popup');
+    const signupOverlay = document.getElementById('signup-overlay');
+    const signupClose = document.getElementById('signup-close');
+    const btnLoginBack = document.getElementById('btn-login-back');
+
+    if (btnSignup) {
+        btnSignup.addEventListener('click', function(e) {
+            e.preventDefault();
+            loginPopup.classList.remove('open');
+            loginOverlay.classList.remove('open');
+            signupPopup.classList.add('open');
+            signupOverlay.classList.add('open');
+        });
+    }
+
+    if (signupClose) {
+        signupClose.addEventListener('click', function() {
+            signupPopup.classList.remove('open');
+            signupOverlay.classList.remove('open');
+            document.body.classList.remove('menu-open');
+        });
+    }
+
+    signupOverlay.addEventListener('click', function() {
+        signupPopup.classList.remove('open');
+        signupOverlay.classList.remove('open');
+        document.body.classList.remove('menu-open');
+    });
+
+    if (btnLoginBack) {
+        btnLoginBack.addEventListener('click', function(e) {
+            e.preventDefault();
+            signupPopup.classList.remove('open');
+            signupOverlay.classList.remove('open');
+            loginPopup.classList.add('open');
+            loginOverlay.classList.add('open');
+        });
+    }
+
+    const btnGoogleLogin = document.getElementById('btn-google-login');
+    const btnGoogleSignup = document.getElementById('btn-google-signup');
+
+    if (btnGoogleLogin) {
+        btnGoogleLogin.addEventListener('click', function() {
+            alert('Redirection vers Google pour la connexion...');
+        });
+    }
+
+    if (btnGoogleSignup) {
+        btnGoogleSignup.addEventListener('click', function() {
+            alert('Redirection vers Google pour l\'inscription...');
         });
     }
 </script>
